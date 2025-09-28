@@ -1,0 +1,9 @@
+.menu-item {
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}

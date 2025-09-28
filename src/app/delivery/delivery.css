@@ -1,0 +1,36 @@
+.delivery {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.cart-item .info {
+  flex: 1;
+}
+.cart-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.cart-item .count {
+  font-weight: bold;
+  font-size: 16px;
+  color: #28a745;
+}
+.delivery { padding: 20px; }
+.cart-item { display: flex; align-items: center; margin-bottom: 10px; gap: 10px; }
+.cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; }
+.cart-item .info { flex: 1; }
+.count { font-weight: bold; }

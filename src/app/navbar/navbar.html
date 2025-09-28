@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <!-- Left section -->
+  <div class="navbar-left">
+    <!-- <img src="https://cdn.pixabay.com/photo/2018/05/21/23/54/leaves-3420078_1280.jpg" alt="Logo" class="logo" /> -->
+
+    <div class="location">
+      <span class="deliver-text">Deliver in</span>
+      <select (change)="changeLocation($event)">
+        <option *ngFor="let loc of locations" [selected]="loc === selectedLocation">
+          {{ loc }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Middle section -->
+  <div class="navbar-middle">
+    <!-- <a routerLink="/">Home</a> -->
+    <a routerLink="/categorypage">Products</a>
+    <a href="#">Reviews</a>
+    <a href="/delivery">Delivery</a>
+    <a href="#">Product Issue</a>
+  </div>
+
+  <!-- Right section -->
+  <div class="navbar-right">
+    <button class="cta-btn">Download the App & Claim Offer Now</button>
+  </div>
+</nav>

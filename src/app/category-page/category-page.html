@@ -1,0 +1,49 @@
+<!-- category-page.html -->
+<div class="category-page">
+  <nav class="breadcrumb">
+    <a routerLink="/">Home</a> > <a routerLink="/products">Products</a> >
+    <span>{{ selectedCategory.name }}</span>
+  </nav>
+
+  <div class="content">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li
+          *ngFor="let cat of categories"
+          [class.active]="cat.name === selectedCategory.name"
+          (click)="selectedCategory = cat"
+        >
+          <img [src]="cat.img" alt="{{ cat.name }}" />
+          <span>{{ cat.name }}</span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Products -->
+    <section class="products">
+      <h2>Buy {{ selectedCategory.name }} Online</h2>
+
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let item of selectedCategory.varieties">
+          <img [src]="item.img" alt="{{ item.name }}" />
+          <h3>{{ item.name }}</h3>
+          <p class="qty">{{ item.qty }}</p>
+          <p class="desc">{{ item.desc }}</p>
+
+          <!-- Quantity Selector -->
+          <div class="quantity-controls">
+            <button (click)="decreaseQuantity(item.name)">-</button>
+            <span>{{ itemQuantities[item.name] || 0 }}</span>
+            <button (click)="increaseQuantity(item.name)">+</button>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button class="add-cart-btn" (click)="addToCart(item)" [disabled]="!itemQuantities[item.name]">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
